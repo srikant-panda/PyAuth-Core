@@ -1,6 +1,7 @@
 User Registration & Authentication System
 
 A modular Python-based authentication system demonstrating Object-Oriented Programming (OOP) principles and the separation of application logic from data persistence.
+
 🚀 Overview
 
 This project serves as a foundational backend system. It splits the responsibility of user management into two distinct layers:
@@ -14,12 +15,17 @@ By decoupling these components, the system mimics real-world backend architectur
 
 The project is organized into a package for better modularity:
 Plaintext
-
-User_Registration_and_login/
-├── UserRegistration.py  # Contains logic for user input & validation
-├── Database.py          # Handles data persistence (save/load)
-└── main.py              # Entry point for the application
-
+```code
+PyAuth-Core/
+│
+├── User_Registration_and_login/
+│   ├── __init__.py            # <--- NEW: Makes this a Python package
+│   ├── UserRegistration.py
+│   └── Database.py
+│
+├── main.py
+└── README.md
+```
 ✨ Features
 
     Separation of Concerns: Distinct classes for UI/Registration and Database storage.
