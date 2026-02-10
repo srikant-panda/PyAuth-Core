@@ -1,6 +1,7 @@
 User Registration & Authentication System
 
 A modular Python-based authentication system demonstrating Object-Oriented Programming (OOP) principles and the separation of application logic from data persistence.
+
 🚀 Overview
 
 This project serves as a foundational backend system. It splits the responsibility of user management into two distinct layers:
