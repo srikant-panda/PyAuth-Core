@@ -19,6 +19,7 @@ Plaintext
 PyAuth-Core/
 │
 ├── User_Registration_and_login/
+│   ├── __init__.py            # <--- NEW: Makes this a Python package
 │   ├── UserRegistration.py
 │   └── Database.py
 │
