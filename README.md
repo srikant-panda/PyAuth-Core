@@ -15,12 +15,12 @@ By decoupling these components, the system mimics real-world backend architectur
 
 The project is organized into a package for better modularity:
 Plaintext
-
+```code
 User_Registration_and_login/
 ├── UserRegistration.py  # Contains logic for user input & validation
 ├── Database.py          # Handles data persistence (save/load)
 └── main.py              # Entry point for the application
-
+```
 ✨ Features
 
     Separation of Concerns: Distinct classes for UI/Registration and Database storage.
