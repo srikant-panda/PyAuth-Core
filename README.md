@@ -1,74 +1,69 @@
-User Registration & Authentication System
+````md
+# 🔐 PyAuth-Core
 
-A modular Python-based authentication system demonstrating Object-Oriented Programming (OOP) principles and the separation of application logic from data persistence.
+PyAuth-Core is a modular **Python CLI authentication system** built to practice **OOP concepts** and backend-style architecture.
 
-🚀 Overview
+It supports user authentication features like registration, login, password validation, password change, and an admin panel using a JSON-based database.
 
-This project serves as a foundational backend system. It splits the responsibility of user management into two distinct layers:
+---
 
-    Registration Logic: Handles user input and credential gathering.
+## ✨ Features
 
-    Database Management: Handles the storage and retrieval of user records.
+### 👤 User
+- Register
+- Login
+- Change Password
+- Strong password validation rules
 
-By decoupling these components, the system mimics real-world backend architectures (like Django's model-view structure), making the code easier to debug, test, and scale.
-🛠️ Project Structure
+### 🛡️ Admin
+- Admin login/register (limited)
+- List users
+- Delete users
 
-The project is organized into a package for better modularity:
-Plaintext
-```code
+### 📦 Storage
+- JSON-based persistent database (`user.json`, `admin.json`)
+
+---
+
+## 🛠 Run Project
+
+```bash
+python main.py
+````
+
+---
+
+## 📌 Project Structure
+
+```plaintext
 PyAuth-Core/
-│
-├── User_Registration_and_login/
-│   ├── __init__.py            # <--- NEW: Makes this a Python package
+├── User_Resitration_and_login/
 │   ├── UserRegistration.py
-│   └── Database.py
-│
+│   ├── Database.py
+│   ├── Admin.py
+│   └── __init__.py
 ├── main.py
 └── README.md
 ```
-✨ Features
 
-    Separation of Concerns: Distinct classes for UI/Registration and Database storage.
+---
 
-    OOP Implementation: Uses Python classes to manage state and behavior.
+## 🚀 Roadmap
 
-    Data Persistence: Saves registered user credentials to a simulated database.
+* [ ] Password hashing (bcrypt/argon2)
+* [ ] Brute-force protection
+* [ ] Logging system
+* [ ] Convert to Django REST Framework API
+* [ ] React + Tailwind frontend
 
-    Clean Authentication Flow: A simple CLI interface for users to choose between login and registration.
+---
 
-💻 Usage
+## ⚠️ Note
 
-To run the project, ensure you are in the root directory and execute:
-Bash
+This project is for learning purposes. Passwords are currently stored in plain text.
 
-python main.py
+---
 
-Example Flow:
+## 👤 Author
 
-    Run the script.
-
-    Type register when prompted.
-
-    Enter your desired username and password (validated by the UserRegistration class).
-
-    The Database class will then capture and store your credentials.
-
-🛡️ Security Roadmap (Red Team Goals)
-
-As part of my journey into cybersecurity, I plan to enhance this project with:
-
-    [ ] Password Hashing: Implementing bcrypt or argon2 to avoid storing plain-text passwords.
-
-    [ ] Paranoid Validation: Integrating my Password Validator project to enforce high-entropy credentials.
-
-    [ ] SQL Injection Prevention: Transitioning to a SQL-based backend using prepared statements.
-
-👤 Author
-
-Srikant Panda
-
-    B.Tech Student (4th Semester)
-
-    Aspiring Red Team / Cybersecurity Professional
-
-    Python & Django Enthusiast
+**Srikant Panda**
