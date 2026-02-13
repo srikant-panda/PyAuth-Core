@@ -5,7 +5,7 @@ class AdminUser(UserAuthontication):
         super().__init__()
     def __register(self):
         self.role = 'Admin'
-        super().registration()
+        UserAuthontication.registration(self)
         return self.role
     def delete_user(self):
         target= input("enter the username to delete: ")

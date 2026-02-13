@@ -1,13 +1,20 @@
 import json,os
 
 
-class UserDatabase:
+class UserDatabase():
     file_path='User_Resitration_and_login/user.json'
-    if os.path.exists(file_path):
-        with open(file_path,'r') as f:
-            user = json.load(f)
-    else:
-        user = {}
+    try:
+        if os.path.exists(file_path):
+            with open(file_path,'r') as f:
+                user = json.load(f)
+        else:
+            user = {}
+    except Exception as e:
+            os.rename(file_path,f'{file_path}.bak')
+            user = {}
+            # with open(file_path,'w') as f:
+            #     user=f.write('{}')
+                # user = json.load(f)
     @classmethod
     def register(cls,username,password):
         if username in cls.user:
@@ -37,18 +44,25 @@ class UserDatabase:
             print('User loggedin!')
             return True
         print('Invalid Credential!')
+        return False
     
                     
 class AdminDatabase(UserDatabase):
-    success = True
+    # success = True
     file_path = 'User_Resitration_and_login/admin.json'
 
-    if os.path.exists(file_path):
-        with open(file_path,'r') as f:
-            admin = json.load(f)
-    else:
-        admin = {}
-
+    try:
+        if os.path.exists(file_path):
+            with open(file_path,'r') as f:
+                admin = json.load(f)
+        else:
+            admin = {}
+    except Exception as e:
+            os.rename(file_path,f'{file_path}.bak')
+            admin = {}
+            # with open(file_path,'w') as f:
+            #     f.write('{}')
+            #     admin = json.dump(f)
     @classmethod
     def registration(cls,username,password,role):
         #check the request is worthy or not
@@ -58,7 +72,7 @@ class AdminDatabase(UserDatabase):
                 cls.admin[username] = password
                 with open(cls.file_path,'w') as f:
                     json.dump(cls.admin,f)
-                return 'Welcome Admin Dashboard!.With great power comes with great responsibility! Handle with care.'
+                return 'Welcome Admin!.With great power comes with great responsibility! Handle with care.'
             return 'Error: No more admin registration avilable. Contact the admin for this.'
         return 'Error: 403 Forbidden: You are not authorized.'
     @classmethod
@@ -77,7 +91,7 @@ class AdminDatabase(UserDatabase):
     def delete_user(cls,username,role):
         if role == 'Admin':
             if username in cls.user:
-                del cls.user[username]
+                del UserDatabase.user[username]
                 with open(UserDatabase.file_path,'w') as f:
                     json.dump(cls.user,f)
                 return 'User deleted'
