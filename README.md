@@ -48,14 +48,6 @@ PyAuth-Core/
 
 ---
 
-## 🚀 Roadmap
-
-* [ ] Password hashing (bcrypt/argon2)
-* [ ] Brute-force protection
-* [ ] Logging system
-* [ ] Convert to Django REST Framework API
-* [ ] React + Tailwind frontend
-
 ---
 
 ## ⚠️ Note
